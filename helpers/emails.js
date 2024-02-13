@@ -19,7 +19,7 @@ export const registerMail = async data => {
     html: `
       <p>Hola ${name}, comprueba tu cuenta en Junior's Gym</p>
       <p>Tu cuenta ya está lista, da click en el siguiente enlace:</p>
-      <a href="${process.env.FRONTEND_URL}/confirm/${token}">Comprobar cuenta</a>
+      <a href="https://www.juniorsgym.site/confirm/${token}">Comprobar cuenta</a>
     `,
   })
 }
@@ -43,7 +43,7 @@ export const forgotPasswordMail = async data => {
     html: `
       <p>Hola ${name}, has solicitado restablecer tu password de Junior's Gym</p>
       <p>Sigue el siguiente enlace para generar un nuevo password:</p>
-      <a href="${process.env.FRONTEND_URL}/forgot-password/${token}">Reestablecer password</a>
+      <a href="https://www.juniorsgym.site/forgot-password/${token}">Reestablecer password</a>
     `,
   })
 }
