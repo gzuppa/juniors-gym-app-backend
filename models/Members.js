@@ -38,7 +38,7 @@ const memberSchema = mongoose.Schema(
     status: {
       type: String,
       required: true,
-      enum: ['Pagado', 'Por pagar', 'Bloqueado'],
+      enum: ['Pagado', 'Pagado (transferencia)', 'Por pagar', 'Bloqueado'],
     },
     principalTrainer: {
       type: mongoose.Schema.Types.ObjectId,
