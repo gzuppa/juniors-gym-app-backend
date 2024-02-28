@@ -6,13 +6,15 @@ import userRoutes from './routes/userRoutes.js'
 import memberRoutes from './routes/memberRoutes.js'
 import trainingRoutes from './routes/trainingRoutes.js'
 import warehouseRoutes from './routes/warehouseRoutes.js'
+import visitRoutes from './routes/visitRoutes.js'
 
 const app = express()
 app.use(express.json({ limit: '50mb' }))
 dotenv.config()
 connectDB()
 
-const whitelist = 'https://www.juniorsgym.site'
+// const whitelist = 'https://www.juniorsgym.site'
+const whitelist = 'http://localhost:5173'
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.includes(origin)) {
@@ -30,6 +32,7 @@ app.use('/api/users', userRoutes)
 app.use('/api/members', memberRoutes)
 app.use('/api/trainings', trainingRoutes)
 app.use('/api/warehouse', warehouseRoutes)
+app.use('/api/visits', visitRoutes)
 
 const PORT = process.env.PORT || 4000
 
@@ -42,7 +45,8 @@ import { Server } from 'socket.io'
 const io = new Server(mainServer, {
   pingTimeout: 60000,
   cors: {
-    origin: 'https://www.juniorsgym.site',
+    // origin: 'https://www.juniorsgym.site',
+    origin: 'http://localhost:5173',
   },
 })
 
