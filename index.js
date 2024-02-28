@@ -13,8 +13,8 @@ app.use(express.json({ limit: '50mb' }))
 dotenv.config()
 connectDB()
 
-// const whitelist = 'https://www.juniorsgym.site'
-const whitelist = 'http://localhost:5173'
+const whitelist = 'https://www.juniorsgym.site'
+// const whitelist = 'http://localhost:5173'
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.includes(origin)) {
@@ -45,8 +45,8 @@ import { Server } from 'socket.io'
 const io = new Server(mainServer, {
   pingTimeout: 60000,
   cors: {
-    // origin: 'https://www.juniorsgym.site',
-    origin: 'http://localhost:5173',
+    origin: 'https://www.juniorsgym.site',
+    // origin: 'http://localhost:5173',
   },
 })
 
